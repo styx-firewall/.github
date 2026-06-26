@@ -1,78 +1,138 @@
 # Styx FLF
 
-Web-based network management platform for Linux — firewall, routing, VPN, QoS, and eBPF from a
-single control plane.
+A web-based network management platform for Linux that provides centralized management of firewall, routing, VPN, QoS, monitoring, and eBPF from a single control plane.
 
-Note: This is a preview and should not be used in production environment
+> **Note:** This is an early preview and **must not** be used in production environments.
 
-You can download the ISO from:
+Download the latest preview ISO:
+
 https://github.com/styx-firewall/styx-flf
+
+> **Warning:** This is a very early preview intended for testing only.
 
 ---
 
-# Key capability that will support
+# Planned Capabilities
 
-## Firewall & NAT (initial)
-Full nftables rule management across filter and NAT chains. 
-Objects-based model
+## Firewall & NAT *(initial)*
 
-## Routing (initial)
-Static routes with ECMP multipath, custom routing tables, metrics, and MTU. 
+* Full nftables rule management across filter and NAT tables.
+* Object-based configuration model.
 
-### Dynamic Routing (draft)
-Dynamic routing support for BGP, OSPF, RIP, BFD, IGMP.
+## Routing *(initial)*
 
-## IPsec VPN (initial)
-IKEv1 and IKEv2 tunnel and transport mode. Site-to-site and remote access (road warrior)
-topologies. Full tunnel lifecycle control from the UI.
+* Static routes.
+* ECMP multipath routing.
+* Custom routing tables.
 
-## Traffic Control (initial) 
+### Dynamic Routing *(draft)*
 
-### Packet marking support
-Routing, TC,  and Firewall Packet Marking Support
+Support for:
 
-### TC
-Support for most common qdisc with rate-limited classes and traffic classification filters. Real-time
-interface traffic statistics. 
+* BGP
+* OSPF
+* RIP
+* BFD
+* IGMP
 
+## IPsec VPN *(initial)*
 
-## eBPF (concept)
-Attach, detach, and list kernel eBPF programs. Structured feedback system with per-module
-statistics, events, and alerts surfaced in the dashboard.
+* IKEv1 and IKEv2.
+* Tunnel and transport modes.
+* Site-to-site and remote access (road warrior).
+* Complete tunnel lifecycle management from the web interface.
 
-## Monitoring/Watchdog & SLA (initial)
-ICMP, DNS, and HTTP reachability monitors. Built-in iperf3 bandwidth testing. Real-time Charts.
-Internal Services Watchdogs
+## Traffic Control *(initial)*
+
+### Packet Marking *(initial)*
+
+Packet marking support for:
+
+* Routing
+* Firewall
+* Traffic Control (TC)
+
+### QoS (*initial*)
+
+* Support for the most commonly used qdiscs.
+* Rate-limited classes.
+* Traffic classification filters.
+
+### Dashboard & Statistics 
+
+* Real-time monitoring charts and status.
+* Real-time interface traffic statistics.
+
+## eBPF *(prototyping)*
+
+* Attach, detach, and manage kernel eBPF programs.
+* Per-module statistics.
+* Events and alerts integrated into the dashboard.
+
+## Monitoring & SLA
+
+### Reachability Monitoring
+
+* ICMP
+* DNS
+* HTTP
+
+### Performance Testing
+
+* iperf3 bandwidth testing.
+
+### Watchdog
+
+* Internal service watchdogs.
 
 ## Security
 
-### RBAC with role-based capabilities. (initial)
-The solution incorporates auditing and monitoring mechanisms for both software and system.
-AppArmor and auditd configuration. IDS/IPS rule management (not yet implemented)
+### Access Control *(initial)*
 
-### Auditing (initial)
-Internal auditing
+* Role-Based Access Control (RBAC).
+* Fine-grained permissions.
+* Multi-user support.
 
-### Auditd (pending)
+### System Hardening *(planned)*
 
-### Detection (inital)
-Basic host detection/events and network topology
+* AppArmor configuration and policy management.
 
-### API & Automation (inital)
-REST API with token authentication. 
-Full configuration management through the API — deploy and manage firewall rules, VPN tunnels, interfaces, 
-routes, and QoS policies programmatically. No CLI scripting needed; everything the UI can do is available via
-the API for integration with automation workflows and third-party tools.
+### Auditing *(initial)*
 
-### Platform
-Configuration backup and restore. System event log with filtering and acknowledgement. Full
-multi-user support with session and token-based auth.
+* Internal auditing.
+
+### auditd *(planned)*
+
+* auditd configuration and log management.
+
+### Detection *(initial)*
+
+* Basic host event detection.
+* Network topology discovery.
+* Anomalise/services detection in networks *(planned)*
+
+### IDS / IPS *(planned)*
+
+* Suricata IDS/IPS support.
+
+## API & Automation *(initial)*
+
+* REST API with token-based authentication.
+* Complete configuration management through the API.
+* Firewall, VPN, interfaces, routing, and QoS management.
+* Every feature available in the web interface is also available through the API.
+
+## Platform
+
+* Configuration backup and restore.
+* Unified configuration model with distinct running and startup states.
+* System event log with filtering and acknowledgement.
+* Session-based and token-based authentication.
 
 ---
 
-## Architecture
+# Architecture
 
-Latest Linux Kernel technology. Zero build step, Fully self-contained.
-
----
-
+* Built on the latest Linux kernel technologies.
+* No build step required.
+* Fully self-contained.
