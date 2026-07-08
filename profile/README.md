@@ -1,8 +1,6 @@
 # Styx FLF
 
-A web-based network management platform for Linux that provides centralized management of firewall, routing, VPN, QoS, monitoring, and eBPF from a single control plane.
-
-> **Note:** This is an early preview and **must not** be used in production environments.
+A web-based network management platform for Linux that provides centralized management of firewall, routing, VPN, QoS, monitoring, and eBPF.
 
 Download the latest preview ISO:
 
@@ -12,7 +10,12 @@ https://github.com/styx-firewall/styx-flf
 
 ---
 
-# Planned Capabilities
+# Current/Planned Capabilities
+
+## Networking *(testing)*
+
+Configure physical and virtual interfaces
+
 
 ## Firewall & NAT *(testing)*
 
@@ -33,9 +36,10 @@ Support for:
 * OSPF
 * RIP
 * BFD
-* IGMP
 
-## IPsec VPN *(initial)*
+* IGMP proxy support
+
+## IPsec VPN *(testing)*
 
 * IKEv1 and IKEv2.
 * Tunnel and transport modes.
@@ -57,7 +61,8 @@ Packet marking support for:
 * Support for the most commonly used qdiscs.
 * Rate-limited classes.
 * Traffic classification filters.
-
+* Rules Interface
+* 
 ### Dashboard & Statistics 
 
 * Real-time monitoring charts and status.
@@ -85,7 +90,7 @@ Packet marking support for:
 
 ## Security
 
-### Access Control *(initial)*
+### Access Control *(testing)*
 
 * Role-Based Access Control (RBAC).
 * Fine-grained permissions.
@@ -106,14 +111,14 @@ Packet marking support for:
 ### Detection *(initial)*
 
 * Basic host event detection.
-* Network topology discovery.
+* Basic Network topology discovery.
 * Anomalise/services detection in networks *(planned)*
 
 ### IDS / IPS *(planned)*
 
 * Suricata IDS/IPS support.
 
-## API & Automation *(draft)*
+## API & Automation *(testing/draft)*
 
 * REST API with token-based authentication.
 * Complete configuration management through the API.
@@ -132,5 +137,5 @@ Packet marking support for:
 # Architecture
 
 * Built on the latest Linux kernel technologies.
-* No build step required.
-* Fully self-contained.
+* Debian Based
+
