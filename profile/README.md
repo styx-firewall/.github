@@ -14,16 +14,16 @@ https://github.com/styx-firewall/styx-flf
 
 # Planned Capabilities
 
-## Firewall & NAT *(initial)*
+## Firewall & NAT *(testing)*
 
 * Full nftables rule management across filter and NAT tables.
 * Object-based configuration model.
 
-## Routing *(initial)*
+## Routing *(testing)*
 
 * Static routes.
-* ECMP multipath routing.
-* Custom routing tables.
+* Multipath routing.
+* Routing tables.
 
 ### Dynamic Routing *(draft)*
 
@@ -42,9 +42,9 @@ Support for:
 * Site-to-site and remote access (road warrior).
 * Complete tunnel lifecycle management from the web interface.
 
-## Traffic Control *(initial)*
+## Traffic Control *(testing)*
 
-### Packet Marking *(initial)*
+### Packet Marking *(testing)*
 
 Packet marking support for:
 
@@ -52,7 +52,7 @@ Packet marking support for:
 * Firewall
 * Traffic Control (TC)
 
-### QoS (*initial*)
+### QoS (*testing*)
 
 * Support for the most commonly used qdiscs.
 * Rate-limited classes.
@@ -69,15 +69,13 @@ Packet marking support for:
 * Per-module statistics.
 * Events and alerts integrated into the dashboard.
 
-## Monitoring & SLA
+## Monitoring & SLA 
 
 ### Reachability Monitoring
 
-* ICMP
-* DNS
-* HTTP
+* ICMP *
 
-### Performance Testing
+### Performance Testing *(testing)*
 
 * iperf3 bandwidth testing.
 
@@ -97,7 +95,7 @@ Packet marking support for:
 
 * AppArmor configuration and policy management.
 
-### Auditing *(initial)*
+### Auditing *(testing)*
 
 * Internal auditing.
 
@@ -115,7 +113,7 @@ Packet marking support for:
 
 * Suricata IDS/IPS support.
 
-## API & Automation *(initial)*
+## API & Automation *(draft)*
 
 * REST API with token-based authentication.
 * Complete configuration management through the API.
