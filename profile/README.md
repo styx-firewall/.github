@@ -1,6 +1,6 @@
 # Styx FLF
 
-A web-based network management platform for Linux that provides centralized management of firewall, routing, VPN, QoS, monitoring, and eBPF.
+A web-based network management platform for Linux that provides centralized management of firewall, routing, VPN, QoS, monitoring, and custom eBPF modules.
 
 Download the latest preview ISO:
 
