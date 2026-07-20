@@ -28,7 +28,7 @@ Configure physical and virtual interfaces
 * Multipath routing.
 * Routing tables.
 
-### Dynamic Routing *(draft)*
+### Dynamic Routing *(draft)* *(dev branch only)*
 
 Support for:
 
@@ -68,7 +68,7 @@ Packet marking support for:
 * Real-time monitoring charts and status.
 * Real-time interface traffic statistics.
 
-## eBPF *(prototyping)*
+## eBPF *(prototyping)* *(dev branch only)*
 
 * Attach, detach, and manage kernel eBPF programs.
 * Per-module statistics.
