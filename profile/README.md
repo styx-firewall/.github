@@ -6,7 +6,7 @@ Download the latest preview ISO:
 
 https://github.com/styx-firewall/styx-flf
 
-> **Warning:** This is a very early preview intended for testing only.
+> **Warning:** This is tech preview intended for testing only.
 
 ---
 
@@ -28,16 +28,15 @@ Configure physical and virtual interfaces
 * Multipath routing.
 * Routing tables.
 
-### Dynamic Routing *(draft)* *(dev branch only)*
+### Dynamic Routing *(testing)* *(partially testing)*
 
 Support for:
 
-* BGP
-* OSPF
-* RIP
-* BFD
-
-* IGMP proxy support
+* BGP *testing*
+* OSPF *dev*
+* RIP *dev*
+* BFD *testing*
+* IGMP proxy support *dev*
 
 ## IPsec VPN *(testing)*
 
@@ -68,11 +67,11 @@ Packet marking support for:
 * Real-time monitoring charts and status.
 * Real-time interface traffic statistics.
 
-## eBPF *(prototyping)* *(dev branch only)*
-
+## eBPF *(testing)*
+* CORE *testing* BCC *dev*
 * Attach, detach, and manage kernel eBPF programs.
 * Per-module statistics.
-* Events and alerts integrated into the dashboard.
+* Telemetry/Events and alerts integrated into the dashboard (Telemetry).
 
 ## Monitoring & SLA 
 
@@ -112,7 +111,7 @@ Packet marking support for:
 
 * Basic host event detection.
 * Basic Network topology discovery.
-* Anomalise/services detection in networks *(planned)*
+* Anomalies/services detection in networks *(planned)*
 
 ### IDS / IPS *(planned)*
 
@@ -124,12 +123,18 @@ Packet marking support for:
 * Complete configuration management through the API.
 * Firewall, VPN, interfaces, routing, and QoS management.
 * Every feature available in the web interface is also available through the API.
+* NOTE: The current API is not the final version, it was developed as an initial interface to enable real-world internal testing of the software. A significant API redesign is planned for the future.
+
+## Telemtry System *testing* *partially* 
+
+The telemetry system is a **generic, subsystem-agnostic pub/sub pipeline** that collects, routes, stores, and exports operational data from any Styx component. While the initial producer is the eBPF subsystem, the pipeline is designed so that firewall, BGP, strongSwan, DHCP, discovery, and any future service can publish telemetry through the same bus without coupling.
+
 
 ## Platform
 
 * Configuration backup and restore.
 * Unified configuration model with distinct running and startup states.
-* System event log with filtering and acknowledgement.
+* System/Networking logging and Telemtry bus (pub/sub)
 * Session-based and token-based authentication.
 
 ---
