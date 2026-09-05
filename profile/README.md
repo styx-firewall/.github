@@ -8,6 +8,8 @@ https://github.com/styx-firewall/styx-flf
 
 > **Warning:** This is tech preview intended for testing only.
 
+ 
+[Issues](https://github.com/styx-firewall/styx-flf/issues)
 ---
 
 # Current/Planned Capabilities
@@ -28,7 +30,7 @@ Configure physical and virtual interfaces
 * Multipath routing.
 * Routing tables.
 
-### Dynamic Routing *(testing)* *(partially testing)*
+### Dynamic Routing *(testing/dev )*
 
 Support for:
 
