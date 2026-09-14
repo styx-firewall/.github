@@ -152,9 +152,9 @@ While the initial producer is the eBPF subsystem, the pipeline is designed to su
 
 # Architecture
 
-StyX is built as a Linux-native management layer around existing kernel networking and security subsystems.
+Styx is a Linux-native management platform built around the networking and security features already provided by the Linux kernel.
 
-The platform does not implement networking functionality itself where the Linux kernel already provides it. Instead, it provides a unified configuration and management layer for subsystems such as:
+Styx does not reimplement functionality that is already available in Linux. Instead, it provides a single configuration and management interface for components such as:
 
 * Linux networking and routing
 * nftables
@@ -163,14 +163,18 @@ The platform does not implement networking functionality itself where the Linux 
 * eBPF
 * Linux services and system components
 
-The management layer maintains a unified configuration model and translates it into the corresponding Linux subsystem configuration. Operational state, events, statistics, and logs are collected back into the platform for monitoring and automation.
+Styx uses a unified configuration model and applies the configuration to the appropriate Linux subsystems. Runtime state, events, statistics, and logs are collected back into the platform for monitoring and automation.
 
-The architecture is designed to keep subsystem-specific functionality isolated while exposing a consistent management interface through the web UI and API.
+Each subsystem is managed independently while exposing a consistent interface through the web UI and API.
 
 ## Platform
 
 * Configuration backup and restore.
-* Unified configuration model with distinct running and startup states.
-* System/Networking logging and Telemetry bus (pub/sub)
+* Unified configuration model with separate running and startup configurations.
+* System and networking logs.
+* Telemetry bus (pub/sub).
 * Session-based and token-based authentication.
+* UI and backend can be deployed separately.
+* The backend can listen only on localhost and be accessed remotely through an SSH tunnel, without exposing the management API directly to the network.
+
 
