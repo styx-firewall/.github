@@ -162,7 +162,6 @@ Note: External connectors not available yet
 * NTP Client/Server (Chrony)
 * DNS Server *(planned)*
 
-* 
 # Architecture
 
 Styx is a Linux-native management platform built around the networking and security features already provided by the Linux kernel.
