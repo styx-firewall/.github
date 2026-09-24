@@ -16,56 +16,51 @@ NOTE:  By default, the test branch is installed, which will be less up-to-date t
 
 # Current and Planned Capabilities
 
-The capabilities are currently marked as dev/test
-"dev" is still under development and may have limited functionality or known issues, while "test" features are more advanced and should work but require further testing.
+The capabilities marked as dev is still under development and may have limited functionality or known issues, while the
+other features are more advanced and should work but require further testing.
 
 
-## Networking *(testing/dev)*
+## Networking
 
 Configure physical and virtual interfaces
 
-* Physical Interfaces *test*
-* VLAN *dev*
-* Bridge *test*
-* MacVLAN *test*
-* Bond *dev*
-* Loopback *test*
-* PPPoE *dev*
-* VTI *dev*
-* GRE *dev*
-* VXLAN *dev*
-* VRF *dev*
-* XFRM *dev*
+* Physical Interfaces
+* VLAN *(dev)*
+* Bridge 
+* MacVLAN
+* Bond *(dev)*
+* Loopback
+* PPPoE *(dev)*
+* VTI *(dev)*
+* GRE *(dev)*
+* VXLAN *(dev)*
+* VRF *(dev)*
+* XFRM *(dev)*
 
 ## Firewall & NAT *(testing)*
-
+ 
 * Full nftables rule management across filter and NAT tables.
 * Object-based configuration model.
 
-## Routing *(test)*
+## Routing & Dynamic Routing*
 
 * Static routes.
 * Multipath routing.
 * Routing tables.
-
-### Dynamic Routing *(test/dev)*
-
-Support for:
-
-* BGP *(test)*
+* BGP
 * OSPF *(dev)*
 * RIP  *(dev)*
-* BFD *(test)*
+* BFD
 * IGMP proxy support *(dev)*
 
-## IPsec VPN *(test)*
+## IPsec VPN
 
 * IKEv1 and IKEv2.
 * Tunnel and transport modes.
 * Site-to-site and remote access (road warrior).
 * Complete tunnel lifecycle management from the web interface.
 
-## Traffic Control *(test)*
+## Traffic Control 
 
 ### Packet Marking *(test)*
 
@@ -75,7 +70,7 @@ Packet marking support for:
 * Firewall
 * Traffic Control (TC)
 
-### TC/QoS *(test)*
+### TC/QoS
 
 * Support for the most commonly used qdiscs.
 * Rate-limited classes.
@@ -87,20 +82,21 @@ Packet marking support for:
 * Real-time monitoring charts and status.
 * Real-time interface traffic statistics.
 
-## eBPF *(test/dev)*
-* CORE support *(tes)t*
-* BCC *dev*
+## eBPF
+
+* CORE support
+* BCC *(dev)*
 * Attach, detach, and manage kernel eBPF programs.
 * Per-module statistics.
-* Telemetry/Events and alerts integrated into the dashboard (Telemetry).
+* Telemetry/Events and alerts integrated into the dashboard.
 
 ## Monitoring & SLA 
 
 ### SLA, Reachability, Monitoring
 
-* ICMP *(test)*
+* ICMP
 
-### Performance Testing *(test)*
+### Performance Testing
 
 * iperf3 bandwidth testing.
 
@@ -110,7 +106,7 @@ Packet marking support for:
 
 ## Security
 
-### Access Control *(test)*
+### Access Control
 
 * Role-Based Access Control (RBAC).
 * Fine-grained permissions.
@@ -118,22 +114,22 @@ Packet marking support for:
 
 ## Content filter
 
-* Web Filter (test)
-* DNS Filter (test)
+* Web Filter
+* DNS Filter
 
 ### System Hardening *(planned)*
 
 * AppArmor configuration and policy management.
 
-### Auditing *(testing)*
+### General Auditing
 
-* Internal auditing.
+* Internal system/config auditing.
 
 ### auditd *(planned)*
 
 * auditd configuration and log management.
 
-### Discovery/Detection *(testing)*
+### Discovery/Detection
 
 * Host event detection.
 * Network topology Discovery.
@@ -145,31 +141,33 @@ Packet marking support for:
 
 ### IDS / IPS *(planned)*
 
-* Suricata IDS/IPS support.
+* IDS/IPS support.
 
 ## API & Automation *(draft/dev)*
 
 * REST API with token-based authentication.
 * Complete configuration management through the API.
-* Firewall, VPN, interfaces, routing, and QoS management.
 * Every feature available in the web interface is also available through the API.
-* NOTE: The current API is not the final version, it was developed as an initial interface to enable real-world internal testing of the software. A significant API redesign is planned for the future.
+* *NOTE*: The current API is not the final version, it was developed as an initial interface to enable black box testing of the software. A probably significant API redesign is planned for the future.
 
-## Telemetry System *testing* *partially* 
+## Telemetry System
 
 The telemetry system is a generic, subsystem-agnostic pub/sub pipeline that collects, routes, stores, and exports operational data between components and external services.
 While the initial producer is the eBPF subsystem, the pipeline is designed to support other services and modules.
+Note: External connectors not available yet
 
 ## Other Services
 
 * DHCP Server
 * NTP Client/Server (Chrony)
+* DNS Server *(planned)*
 
+* 
 # Architecture
 
 Styx is a Linux-native management platform built around the networking and security features already provided by the Linux kernel.
 
-Styx does not reimplement functionality that is already available in Linux. Instead, it provides a single configuration and management interface for components such as:
+It provides a single configuration and management interface for components such as:
 
 * Linux networking and routing
 * nftables
@@ -191,5 +189,5 @@ Each subsystem is managed independently while exposing a consistent interface th
 * Session-based and token-based authentication.
 * UI and backend can be deployed separately.
 * The backend can listen only on localhost and be accessed remotely through an SSH tunnel, without exposing the management API directly to the network.
-
+* Debian based
 
