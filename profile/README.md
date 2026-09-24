@@ -10,13 +10,16 @@ https://github.com/styx-firewall/styx-flf
  
 [Issues](https://github.com/styx-firewall/styx-flf/issues)
 
-The capabilities are currently marked as dev/test
-
-"dev" is still under development and may have limited functionality or known issues, while "test" features are more advanced and should work but require further testing.
+NOTE:  By default, the test branch is installed, which will be less up-to-date than the dev version. However, the dev version is updated more frequently and may break between updates. You can change the branch from the UI.
 
 ---
 
 # Current/Planned Capabilities
+
+
+The capabilities are currently marked as dev/test
+"dev" is still under development and may have limited functionality or known issues, while "test" features are more advanced and should work but require further testing.
+
 
 ## Networking *(testing/dev)*
 
