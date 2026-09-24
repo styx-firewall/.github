@@ -14,8 +14,7 @@ NOTE:  By default, the test branch is installed, which will be less up-to-date t
 
 ---
 
-# Current/Planned Capabilities
-
+# Current and Planned Capabilities
 
 The capabilities are currently marked as dev/test
 "dev" is still under development and may have limited functionality or known issues, while "test" features are more advanced and should work but require further testing.
@@ -76,12 +75,12 @@ Packet marking support for:
 * Firewall
 * Traffic Control (TC)
 
-### QoS *(test)*
+### TC/QoS *(test)*
 
 * Support for the most commonly used qdiscs.
 * Rate-limited classes.
 * Traffic classification filters.
-* Rules
+* TC Rules
 
 ### Dashboard & Statistics 
 
@@ -97,7 +96,7 @@ Packet marking support for:
 
 ## Monitoring & SLA 
 
-### Reachability Monitoring
+### SLA, Reachability, Monitoring
 
 * ICMP *(test)*
 
@@ -117,6 +116,11 @@ Packet marking support for:
 * Fine-grained permissions.
 * Multi-user support.
 
+## Content filter
+
+* Web Filter (test)
+* DNS Filter (test)
+
 ### System Hardening *(planned)*
 
 * AppArmor configuration and policy management.
@@ -135,6 +139,10 @@ Packet marking support for:
 * Network topology Discovery.
 * Anomalies/services detection in networks *(planned)*
 
+## HA
+
+* contrackd *(dev)*
+
 ### IDS / IPS *(planned)*
 
 * Suricata IDS/IPS support.
@@ -150,8 +158,12 @@ Packet marking support for:
 ## Telemetry System *testing* *partially* 
 
 The telemetry system is a generic, subsystem-agnostic pub/sub pipeline that collects, routes, stores, and exports operational data between components and external services.
-While the initial producer is the eBPF subsystem, the pipeline is designed to support other services and modules in the future.
+While the initial producer is the eBPF subsystem, the pipeline is designed to support other services and modules.
 
+## Other Services
+
+* DHCP Server
+* NTP Client/Server (Chrony)
 
 # Architecture
 
