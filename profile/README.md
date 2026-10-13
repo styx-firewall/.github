@@ -152,14 +152,13 @@ Packet marking support for:
 
 ## Telemetry System
 
-The telemetry system is a generic, subsystem-agnostic pub/sub pipeline that collects, routes, stores, and exports operational data between components and external services.
-While the initial producer is the eBPF subsystem, the pipeline is designed to support other services and modules.
-Note: External connectors not available yet
+The telemetry system is a generic, subsystem-agnostic pub/sub pipeline that collects, routes, stores, and exports operational data between components and external services (OTEL).
 
 ## Other Services
 
 * DHCP Server
 * NTP Client/Server (Chrony)
+* Log Forwarding (rsyslog)
 * DNS Server *(planned)*
 
 # Architecture
@@ -188,5 +187,5 @@ Each subsystem is managed independently while exposing a consistent interface th
 * Session-based and token-based authentication.
 * UI and backend can be deployed separately.
 * The backend can listen only on localhost and be accessed remotely through an SSH tunnel, without exposing the management API directly to the network.
-* Debian based
+* Debian 13 based
 
